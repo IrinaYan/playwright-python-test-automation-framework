@@ -11,9 +11,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
-  
-      - name: Verify Docker
-        run: docker --version
 
-      - name: Verify Docker Compose
-        run: docker compose version
+
+      - name: Build Docker image
+        run: docker compose build
