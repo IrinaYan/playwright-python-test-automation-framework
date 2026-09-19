@@ -4,6 +4,14 @@ on:
   push:
   pull_request:
 
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -65,9 +73,16 @@ jobs:
           npm install -g allure
           allure generate allure-results -o allure-report
 
-      - name: Upload Allure HTML report
-        if: always()
-        uses: actions/upload-artifact@v4
+          
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Allure report to GitHub Pages
+        uses: actions/upload-pages-artifact@v4
         with:
-          name: allure-report
-          path: allure-report/
+          path: allure-report
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
