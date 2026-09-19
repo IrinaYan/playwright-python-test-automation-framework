@@ -1,0 +1,29 @@
+
+# Python cache
+__pycache__/
+
+
+# Pytest cache
+.pytest_cache/
+
+# IDE
+.vscode/
+
+
+# Virtual environment
+venv/
+.venv/
+
+
+# Test artifacts
+screenshots/
+reports/
+allure-results/
+logs/
+
+
+# Environment variables and secrets
+.env
+
+# OS
+Thumbs.db

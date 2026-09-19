@@ -1,0 +1,10 @@
+services:
+  tests:
+    build: .
+    env_file:
+    - .env
+    volumes:
+      - ./screenshots:/app/screenshots
+      - ./logs:/app/logs
+      - ./allure-results:/app/allure-results
+    command: pytest --alluredir=allure-results

@@ -1,0 +1,38 @@
+
+#Virtual environment
+venv/
+.venv/
+
+#Git files
+.git/
+.gitignore
+
+
+#Python cache
+__pycache__/
+
+
+# Pytest cache
+.pytest_cache/
+
+
+#Test artifacts
+screenshots/
+logs/
+reports/
+allure-results/
+
+
+# Environment variables and secrets
+.env
+
+
+# IDE
+.vscode/
+
+
+
+
+
+
+

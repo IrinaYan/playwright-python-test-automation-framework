@@ -1,0 +1,75 @@
+
+{
+    "valid_user": {
+
+        "name": "user12",
+        "email": "user112_new@gmail.com",
+        "day_of_birth": "10",
+        "month_of_birth": "July",
+        "year_of_birth": "2000",
+        "first_name": "Jane",
+        "last_name": "Smith",
+        "company": "Test Company",
+        "address": "2395 Doctors Drive, Los Angeles, CA",
+        "country": "United States",
+        "state": "California",
+        "city": "LA",
+        "zip_code": "90066",
+        "mobile_number": "(323) 462-2762"
+    },
+
+    "invalid_user": {
+        
+        "name": "user1",
+        "email": "user2_new@gmail.com",
+        "invalid_email": "user2_newgmail.com"
+    },
+
+
+    "contact_us":{
+
+        "name":"user1",
+        "email":"user112_new@gmail.com",
+        "subject":"Test Subject ",
+        "message":"Test Message"
+    },
+
+
+    "products":{
+
+        "search_item_name": "Sleeveless Dress",
+        "quantity_field": "4",
+        "comment_for_prodcut": "Comment for test."
+    },
+
+    "product_payment_details":{
+
+        "name_on_card": "NAME LASTNAME",
+        "card_number": "123456789101",
+        "cvc": "133",
+        "expiration_MM": "11",
+        "expiration_YYYY":"2026"
+    },
+
+
+    "review_inputs":{
+        "name": "test_name",
+        "email": "user1@gmail.com",
+        "review_message": "Test review message"
+    },
+
+
+    "subscribtion_email":{
+        "email": "user112_new@gmail.com"
+    }
+
+
+
+}
+
+
+  
+
+ 
+
+
