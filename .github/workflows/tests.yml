@@ -31,19 +31,7 @@ jobs:
       - name: Run Playwright tests
         run: docker compose run tests
 
-      - name: Generate Allure report
-        if: always()
-        uses: simple-elf/allure-report-action@v1.11
-        with:
-          allure_results: allure-results
-          allure_report: allure-report
 
-      - name: Upload Allure report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report
-          path: allure-report/
 
 
 
@@ -53,6 +41,7 @@ jobs:
         with:
           name: screenshots
           path: screenshots/
+          
 
       - name: Upload logs
         if: always()
@@ -60,6 +49,7 @@ jobs:
         with:
           name: logs
           path: logs/
+
 
       - name: Upload Allure results
         if: always()
