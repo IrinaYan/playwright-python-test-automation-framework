@@ -2,6 +2,7 @@ name: Playwright Tests
 
 on:
   push:
+  pull_request:
 
 jobs:
   test:
@@ -11,5 +12,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
   
-      - name: Verify runner
-        run: echo "GitHub Actions runner is working"
+      - name: Verify Docker
+        run: docker --version
+
+      - name: Verify Docker Compose
+        run: docker compose version
