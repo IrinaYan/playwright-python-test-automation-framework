@@ -1,6 +1,10 @@
 
 # Playwright Python Test Automation Framework
 
+[![GitHub Actions](https://github.com/IrinaYan/playwright-python-test-automation-framework/actions/workflows/tests.yml/badge.svg)](https://github.com/IrinaYan/playwright-python-test-automation-framework/actions/workflows/tests.yml)
+
+**[View Latest Allure Test Report](https://irinayan.github.io/playwright-python-test-automation-framework/)**
+
 
 
 ## Overview
@@ -9,6 +13,8 @@ This project is a UI test automation framework built to automate end-to-end
 test scenarios for the Automation Exercise practice website.[Automation Exercise](https://automationexercise.com/)
 
 This framework is built with Python, Playwright, and Pytest, following the Page Object Model (POM) design pattern. 
+
+Allure results, logs, and screenshots are preserved after test execution, including failed runs, and the generated Allure report is published to GitHub Pages.
 
 
 The project demonstrates:
@@ -32,6 +38,7 @@ The project demonstrates:
 - Parallel test execution using `pytest-xdist`
 - Docker & Containerization
 - CI/CD automation using GitHub Actions
+- Automatic Allure report deployment to GitHub Pages / Public Allure report
 
 
 
@@ -47,12 +54,19 @@ The project demonstrates:
 | Pytest | Test framework and test execution |
 | Page Object Model (POM) | Test automation architecture |
 | Allure | Test reporting |
-| Docker | Containerized test execution |
+| Docker & Docker Compose| Containerized test execution |
 | Git | Version control |
 | GitHub | Source code repository |
 | GitHub Actions | CI/CD automation |
+| GitHub Pages | Test report hosting |
 | python-dotenv | Environment configuration |
 | JSON | Test data storage |
+
+
+
+
+
+
 
 
 
@@ -81,6 +95,11 @@ The main responsibilities are separated into:
 
 playwright-python-automation-framework/
 │
+|__.github/
+    |__workflows/
+        |__tests.yml
+|
+|
 ├── pages/
 │   ├── base_page.py
 │   ├── home_page.py
@@ -382,28 +401,44 @@ After the test execution is complete, generate and open the Allure report locall
 
 
 
-## CI/CD    ---- ???????????????????
+## CI/CD with GitHub Actions
 
-The test suite can be executed automatically through GitHub Actions.     
+The project uses GitHub Actions to automatically build the Docker image and execute the Playwright test suite 
+in a consistent CI environment.
+     
 
-The CI pipeline:
+The workflow is triggered on:
+
+- Pushes to the repository
+- Pull requests
+
+### CI Pipeline
+
+The GitHub Actions workflow performs the following steps:
 
 1. Checks out the repository
-2. Sets up Python
-3. Installs dependencies
-4. Installs Playwright browsers
-5. Executes the test suite
-6. Generates test results
-7. Stores test artifacts
+2. Creates the `.env` file using GitHub Secrets
+3. Verifies Docker and Docker Compose
+4. Builds the Docker image
+5. Runs the Playwright test suite using Docker Compose
+6. Collects screenshots generated for failed tests
+7. Collects test execution logs
+8. Collects Allure test results
+9. Generates the Allure HTML report
+10. Publishes the Allure report to GitHub Pages
 
-And ideally show a badge at the top:
+Sensitive configuration values such as `BASE_URL` and `PASSWORD` are stored securely as GitHub Actions Secrets and are not committed to the repository.
 
-![Tests](https://github.com/USERNAME/REPOSITORY/actions/workflows/tests.yml/badge.svg)
+
+### CI-generated Test Report
+
+The latest CI-generated Allure report is available here:
+**[View Latest Allure Test Report](https://irinayan.github.io/playwright-python-test-automation-framework/)**
 
 
 
 ## Author
-**Irina Arzumanyan**
+**Irina**
 
 - QA Automation Engineer / SDET
 - GitHub: ...
@@ -417,7 +452,6 @@ Planned improvements include:
 
 - API test automation
 - Improved test data factories
-- Dockerized test execution
 - Enhanced logging
 - API + UI test combination
 
