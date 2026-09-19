@@ -41,7 +41,7 @@ jobs:
         with:
           name: screenshots
           path: screenshots/
-          
+
 
       - name: Upload logs
         if: always()
@@ -57,3 +57,17 @@ jobs:
         with:
           name: allure-results
           path: allure-results/
+    
+
+      - name: Generate Allure report
+        if: always()
+        run: |
+          npm install -g allure
+          allure generate allure-results -o allure-report
+
+      - name: Upload Allure HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report/
