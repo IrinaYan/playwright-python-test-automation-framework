@@ -342,109 +342,114 @@ class ProductsPage(BasePage):
 
 
 
+
+
+
+
     # ACTIONS
 
     def click_products_link(self) -> None:
-        self.logger.info("Clicking 'Products' link: %s", self.products_link)
-        self.click(self.products_link) 
+        #self.logger.info("Clicking 'Products' link: %s", self.products_link)
+        self.click(self.products_link, "'Products' link") 
 
     def click_view_product_link(self) -> None:
-        self.logger.info("Clicking 'View Product' link: %s", self.view_product_link)
-        self.click(self.view_product_link)
+        #self.logger.info("Clicking 'View Product' link: %s", self.view_product_link)
+        self.click(self.view_product_link, "'View product' link")
 
 
     def click_close_popup(self) -> None:
         if self.page.locator('iframe[id="aswift_3"]').count() > 0:
             if self.close_popup.is_visible():
-                self.logger.info("Clicking 'Close popup' icon: %s", self.close_popup)
-                self.click(self.close_popup)
+                #self.logger.info("Clicking 'Close popup' icon: %s", self.close_popup)
+                self.click(self.close_popup, "'Close' popup icon")
 
     def fill_search_field(self, test_data: dict) -> None:
-        self.logger.info("Filling 'Search' field: %s", self.search_field)
-        self.fill(self.search_field, test_data["search_item_name"])
+        #self.logger.info("Filling 'Search' field: %s", self.search_field)
+        self.fill(self.search_field, "'Search' field", test_data["search_item_name"])
 
 
     def click_search_button(self) -> None:
-        self.logger.info("Clicking 'Search' button: %s", self.search_button)
-        self.click(self.search_button)
+        #self.logger.info("Clicking 'Search' button: %s", self.search_button)
+        self.click(self.search_button, "'Search' button")
 
 
 
 
     def add_first_item_to_cart(self) -> None:
         self.logger.info("Adding first item to cart")
-        self.hover(self.first_item_cart)
-        self.click(self.add_to_cart_button_first_item)
+        self.hover(self.first_item_cart, "First item cart")
+        self.click(self.add_to_cart_button_first_item, "'Add to cart' button")
 
     def click_continue_shopping_button(self) -> Locator:
-        self.logger.info("Clicking 'Continue Shopping' button: %s", self.continue_shopping_button)
-        self.click(self.continue_shopping_button)
+        #self.logger.info("Clicking 'Continue Shopping' button: %s", self.continue_shopping_button)
+        self.click(self.continue_shopping_button, "'Continue shopping' button")
 
 
     def add_second_item_to_cart(self) -> None:
         self.logger.info("Adding second item to cart")
-        self.hover(self.second_item_cart)
-        self.click(self.add_to_cart_button_second_item)
+        self.hover(self.second_item_cart, "Second item cart")
+        self.click(self.add_to_cart_button_second_item, "'Add to cart' button")
 
  
     def click_view_cart(self) -> None:
-        self.logger.info("Clicking 'View Cart' link: %s", self.view_cart_link)
-        self.click(self.view_cart_link)
+        #self.logger.info("Clicking 'View Cart' link: %s", self.view_cart_link)
+        self.click(self.view_cart_link, "'View cart' link")
 
 
     def increase_quantity(self, test_data: dict) -> None:
-        self.logger.info("Increasing quantity: %s", self.quantity_field) 
-        self.fill(self.quantity_field, test_data["quantity_field"])
+        #self.logger.info("Increasing quantity: %s", self.quantity_field) 
+        self.fill(self.quantity_field, "Quantity field", test_data["quantity_field"])
 
 
     def add_to_cart_for_increased_quantity_item(self) -> None:
-        self.logger.info("Adding to cart for increased quantity item: %s", self.add_to_cart_button)
-        self.click(self.add_to_cart_button)
+        #self.logger.info("Adding to cart for increased quantity item: %s", self.add_to_cart_button)
+        self.click(self.add_to_cart_button, "'Add to cart' button")
 
     def click_proceed_to_checkout_button(self) -> None:
-        self.logger.info("Clicking 'Proceed to checkout' button: %s", self.proceed_to_checkout_button)
-        self.click(self.proceed_to_checkout_button)
+        #self.logger.info("Clicking 'Proceed to checkout' button: %s", self.proceed_to_checkout_button)
+        self.click(self.proceed_to_checkout_button, "'Proceed to checkout' button")
 
 
     def click_register_login_to_proceed_checkout_link(self) -> None:
-        self.logger.info("Clicking 'Register login to proceed checkout' link: %s", self.register_login_to_proceed_checkout_link)
-        self.click(self.register_login_to_proceed_checkout_link)
+        #self.logger.info("Clicking 'Register login to proceed checkout' link: %s", self.register_login_to_proceed_checkout_link)
+        self.click(self.register_login_to_proceed_checkout_link, "'Login to proceed to checkout' button")
 
     def click_continue_button(self) -> None:
-        self.logger.info("Clicking 'Continue' button: %s", self.continue_button)
-        self.click(self.continue_button)
+        #self.logger.info("Clicking 'Continue' button: %s", self.continue_button)
+        self.click(self.continue_button, "'Continure' button")
 
 
     def click_cart_link(self) -> None:
-        self.logger.info("Clicking 'Cart' link: %s", self.cart_link)
-        self.click(self.cart_link)
+        #self.logger.info("Clicking 'Cart' link: %s", self.cart_link)
+        self.click(self.cart_link, "'Cart' link")
 
 
     def input_comment_for_order(self, test_data: dict) -> None:
-        self.logger.info("Inputing 'comment for order: %s", self.comment_about_order)
-        self.fill(self.comment_about_order, test_data["comment_for_prodcut"])
+        #self.logger.info("Inputing 'comment for order: %s", self.comment_about_order)
+        self.fill(self.comment_about_order, "Comment about order", test_data["comment_for_prodcut"])
 
     def place_order(self) -> None:
-        self.logger.info("Clicking 'Place order' button: %s", self.place_order_button)
-        self.click(self.place_order_button)
+        #self.logger.info("Clicking 'Place order' button: %s", self.place_order_button)
+        self.click(self.place_order_button, "'Place order' button")
+
 
     def fill_payment_card_fields(self, test_data: dict) -> None:
         self.logger.info("Filling payment card fields")
-        self.fill(self.name_on_card_field, test_data["name_on_card"])
-        self.fill(self.card_number_field, test_data["card_number"])
-        self.fill(self.cvc_field, test_data["cvc"])
-        self.fill(self.expiration_MM_field, test_data["expiration_MM"])
-        self.fill(self.expiration_YYYY_field, test_data["expiration_YYYY"])
+        self.fill(self.name_on_card_field, "'Name on card' field", test_data["name_on_card"])
+        self.fill(self.card_number_field, "'Card number' field", test_data["card_number"])
+        self.fill(self.cvc_field, "'CVC' field", test_data["cvc"])
+        self.fill(self.expiration_MM_field, "'Expiration month' field", test_data["expiration_MM"])
+        self.fill(self.expiration_YYYY_field, "'Expiration year' field", test_data["expiration_YYYY"])
 
 
     def click_pay_and_confirm_order_button(self) -> None:
-        self.logger.info("Clicking 'Pay and confirm order' button: %s", self.pay_and_confirm_order_button)
-        self.click(self.pay_and_confirm_order_button)
+        #self.logger.info("Clicking 'Pay and confirm order' button: %s", self.pay_and_confirm_order_button)
+        self.click(self.pay_and_confirm_order_button, "'Pay and Confirm order' buton")
 
 
     def click_cart_delete_icon(self) -> None:
-        self.logger.info("Clicking cart 'Delete' icon: %s", self.cart_delete_icon)
-        self.click(self.cart_delete_icon)
+        #self.logger.info("Clicking cart 'Delete' icon: %s", self.cart_delete_icon)
+        self.click(self.cart_delete_icon, "'Cart Delete' icon")
 
 
     def count_added_cart_products_rows(self) -> int:
@@ -454,26 +459,26 @@ class ProductsPage(BasePage):
 
     def filter_women_subcategory_item(self) -> None:
         self.logger.info("Filtering women subcategory item")
-        self.click(self.women_category_plus_icon)
-        self.click(self.women_category_dress)
+        self.click(self.women_category_plus_icon, "'Women category plus' icon")
+        self.click(self.women_category_dress, "Women category dress")
 
     def filter_men_subcategory_item(self) -> None:
         self.logger.info("Filtering men subcategory item")
-        self.click(self.men_category_plus_icon)
-        self.click(self.men_category_tshirts)
+        self.click(self.men_category_plus_icon, "'Men category plus' icon")
+        self.click(self.men_category_tshirts, "Men category tshirts")
         
 
     def filter_kids_subcategory_item(self) -> None:
         self.logger.info("Filtering kids subcategory item")
-        self.click(self.kids_category_plus_icon)
-        self.click(self.kids_category_dress)
+        self.click(self.kids_category_plus_icon, "'Kids category plus' icon")
+        self.click(self.kids_category_dress, "Kids category dress")
 
 
 
 
     def filter_items_by_brand_polo(self) -> None:
-        self.logger.info("Filtering items by brand 'Polo': %s", self.brand_name_polo)
-        self.click(self.brand_name_polo)
+        #self.logger.info("Filtering items by brand 'Polo': %s", self.brand_name_polo)
+        self.click(self.brand_name_polo, "Brand name Polo")
 
 
     def number_of_items_shown_polo(self) -> int:
@@ -482,8 +487,8 @@ class ProductsPage(BasePage):
 
 
     def filter_items_by_brand_babyhug(self) -> None:
-        self.logger.info("Filtering items by brand 'Babyhug': %s", self.brand_name_babyhug)
-        self.click(self.brand_name_babyhug)
+        #self.logger.info("Filtering items by brand 'Babyhug': %s", self.brand_name_babyhug)
+        self.click(self.brand_name_babyhug, "Brand name Babyhug")
         
 
     def number_of_items_shown_babyhug(self) -> int:
@@ -493,13 +498,13 @@ class ProductsPage(BasePage):
 
     def fill_review_form(self, test_data: dict) -> None:
         self.logger.info("Filling review form")
-        self.fill(self.review_name_field, test_data["name"])
-        self.fill(self.review_email_field, test_data["email"])
-        self.fill(self.review_field, test_data["review_message"])
+        self.fill(self.review_name_field, "'Review name' field", test_data["name"])
+        self.fill(self.review_email_field, "Review email' field", test_data["email"])
+        self.fill(self.review_field, "'Review' field", test_data["review_message"])
 
     def click_review_submit_button(self) -> None:
-        self.logger.info("Clicking review 'Submit' button': %s", self.review_submit_button)
-        self.click(self.review_submit_button)
+        #self.logger.info("Clicking review 'Submit' button': %s", self.review_submit_button)
+        self.click(self.review_submit_button, "'Subbmit' button")
       
 
 

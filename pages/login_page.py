@@ -56,28 +56,28 @@ class LoginPage(BasePage):
     # Actions
 
     def click_signup_login_link(self) -> None:
-        self.logger.info("Clicking signup login link: %s", self.login_link) 
-        self.click(self.login_link)
+        #self.logger.info("Clicking signup login link: %s", self.login_link) 
+        self.click(self.login_link, "'Login' link")
 
             
     def fill_login_form(self, email) -> None:
         self.logger.info("Filling login form with valid credentials")
-        self.fill(self.login_email_address_field, email)
-        self.fill(self.login_password_field, PASSWORD) 
+        self.fill(self.login_email_address_field, "'Email address' field", email)
+        self.fill(self.login_password_field, "'Password' field", PASSWORD) 
 
 
     def fill_login_form_with_invalid_email_format(self, test_data: dict) -> None:
         self.logger.info("Filling login form with invalid email format")
-        self.fill(self.login_email_address_field, test_data["invalid_email"])
-        self.fill(self.login_password_field, PASSWORD) 
+        self.fill(self.login_email_address_field, "'Email address' field", test_data["invalid_email"])
+        self.fill(self.login_password_field, "'Passord' field", PASSWORD) 
 
     def click_login_button(self) -> None:
-        self.logger.info("Clicking on login button: %s", self.login_button)
-        self.click(self.login_button)    
+        #self.logger.info("Clicking on login button: %s", self.login_button)
+        self.click(self.login_button, "'Login' button")    
 
     def click_logout_link(self) -> None:
-        self.logger.info("Clicking on logout link: %s", self.logout_link)
-        self.click(self.logout_link)
+        #self.logger.info("Clicking on logout link: %s", self.logout_link)
+        self.click(self.logout_link, "'Logout' link")
 
 
 

@@ -62,23 +62,25 @@ class ContactUs(BasePage):
     # ACTIONS
 
     def click_contact_us_link(self) -> None:
-        self.logger.info("Clicking element: %s", self.contact_us_link)
-        self.click(self.contact_us_link)
+        # self.logger.info("Clicking element: %s", self.contact_us_link)
+        # self.click(self.contact_us_link)
+        self.click(self.contact_us_link, "'Contact Us' link")
+
 
     def fill_contact_us_form(self, test_data: dict) -> None:
         self.logger.info("Filling contact us form")
-        self.fill(self.name_field, test_data["name"])
-        self.fill(self.email_field, test_data["email"])
-        self.fill(self.subject_field, test_data["subject"])
-        self.fill(self.message_field, test_data["message"])
+        self.fill(self.name_field, "'Name' field", test_data["name"])
+        self.fill(self.email_field, "'Email' field", test_data["email"])
+        self.fill(self.subject_field, "'Subject' field", test_data["subject"])
+        self.fill(self.message_field, "'Message' field", test_data["message"])
 
     def upload_file_for_contact_us_form(self) -> None:
         self.logger.info("Uploading file for contact us form")
-        self.upload_file(self.upload_file_button, "test_data/test_file.txt")
+        self.upload_file(self.upload_file_button, "'Upload file' button", "test_data/test_file.txt")
 
     def click_submit_button(self) -> None:
         self.logger.info("Clicking submit button in contact us form")
-        self.click(self.submit_button)
+        self.click(self.submit_button, "'Submit' button")
 
     def accept_dialog_popup(self) -> None:
         self.logger.info("Accepting dialog popup form in contact us page")
@@ -86,7 +88,7 @@ class ContactUs(BasePage):
 
     def click_home_button(self) -> None:
         self.logger.info("Clicking home button")
-        self.click(self.home_button)
+        self.click(self.home_button, "'Home' button")
 
 
 
