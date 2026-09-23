@@ -1,5 +1,6 @@
 import re
 import pytest
+import allure
 from playwright.sync_api import expect
 from utils.logger import get_logger
 
@@ -9,7 +10,9 @@ logger = get_logger(__name__)
 
 
 
-
+@allure.epic("Signup Page")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.title("Verify that the user can complete the signup form with valid credentials")
 
 @pytest.mark.regression
 @pytest.mark.smoke
@@ -26,6 +29,11 @@ def test_fill_new_user_signup_form_with_valid_credentials(signup_page, test_data
     logger.info("Verifying enter account information text is visible")
     expect(signup_page.enter_account_information_text).to_have_text(re.compile("Enter Account Information"))
 
+
+
+@allure.epic("Signup Page")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.title("Verify that the signup form displays an error message for an invalid email format")
 
 @pytest.mark.regression
 def test_fill_new_user_signup_form_with_invalid_email_format(signup_page, test_data):
@@ -48,6 +56,11 @@ def test_fill_new_user_signup_form_with_invalid_email_format(signup_page, test_d
     assert validity["message"] != "" 
 
 
+
+
+@allure.epic("Signup Page")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.title("Verify that the user can submit signup form with valid test data")
 
 @pytest.mark.regression
 @pytest.mark.smoke
@@ -79,6 +92,11 @@ def test_valid_user_signup_form_submission(signup_page, test_data):     #fixture
     expect(signup_page.home_page_link_text).to_be_visible()
 
 
+
+
+@allure.epic("Signup Page")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.title("Verify that the signup form displays an error message when using an existing email")
 
 @pytest.mark.regression
 def test_signup_with_existing_email(signup_page, test_data, registered_user):

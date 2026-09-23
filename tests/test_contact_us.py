@@ -1,4 +1,5 @@
 import re
+import allure
 from playwright.sync_api import expect
 from utils.logger import get_logger
 
@@ -6,7 +7,11 @@ from utils.logger import get_logger
 logger = get_logger(__name__)
 
 
-def test_contact_us_form(contact_us_page, test_data):  # fixture used
+
+@allure.epic("Contact Us")
+@allure.severity(allure.severity_level.NORMAL)
+@allure.title("Submit Contact Us form successfully")
+def test_submit_contact_us_form(contact_us_page, test_data):  # fixture used
 
     contact_us_page.open_base_url()
     logger.info("Verifying that the 'Home' link is visible")

@@ -1,5 +1,6 @@
 import re
 import pytest
+import allure
 from playwright.sync_api import expect
 from utils.logger import get_logger
 
@@ -7,6 +8,11 @@ from utils.logger import get_logger
 
 logger = get_logger(__name__)
 
+
+
+@allure.epic("Login Page")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.title("Verify that the user can log in with valid email and password")
 
 @pytest.mark.regression 
 @pytest.mark.smoke
@@ -25,7 +31,11 @@ def test_login_with_correct_email_and_password(login_page, registered_user):  # 
     expect(login_page.logged_in_user_name_text).to_have_text(
         re.compile(" Logged in as user12"))
 
-    
+
+
+@allure.epic("Login Page")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.title("Verify that the user can not log invalid email")
 
 @pytest.mark.regression
 def test_login_with_incorrect_email(login_page, test_data):  # fixture used
@@ -43,6 +53,11 @@ def test_login_with_incorrect_email(login_page, test_data):  # fixture used
     expect(login_page.login_error_message).to_be_visible()
 
    
+
+
+@allure.epic("Login Page")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.title("Verify that the user can not log in with invalid email format")
 
 @pytest.mark.regression
 def test_login_with_incorrect_email_format(login_page, test_data):  # fixture used
@@ -67,7 +82,12 @@ def test_login_with_incorrect_email_format(login_page, test_data):  # fixture us
     assert validity["valid"] is False
     assert validity["typeMismatch"] is True
     assert validity["message"] != ""
-   
+
+
+
+@allure.epic("Login Page")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.title("Verify that the user can log out successfully")
 
 @pytest.mark.regression
 @pytest.mark.smoke

@@ -1,5 +1,6 @@
 import re
 import pytest
+import allure
 from playwright.sync_api import expect
 from utils.logger import get_logger
 
@@ -8,6 +9,9 @@ from utils.logger import get_logger
 logger = get_logger(__name__)
 
 
+@allure.epic("Products Page")
+@allure.severity(allure.severity_level.NORMAL)
+@allure.title("Verify that the Products link navigates to the Products page ")
 
 @pytest.mark.regression 
 @pytest.mark.smoke
@@ -26,6 +30,10 @@ def test_products_link_navigates_to_products_page(products_page):
 
 
 
+
+@allure.epic("Products Page")
+@allure.severity(allure.severity_level.NORMAL)
+@allure.title("Verify that the product details are visible")
 
 @pytest.mark.regression 
 @pytest.mark.smoke
@@ -59,6 +67,10 @@ def test_verify_product_detail_is_visible(products_page):
 
 
 
+@allure.epic("Products Page")
+@allure.severity(allure.severity_level.NORMAL)
+@allure.title("Verify that the user can search particular product")
+
 @pytest.mark.regression 
 @pytest.mark.smoke
 def test_search_particular_product(products_page, test_data):
@@ -78,6 +90,11 @@ def test_search_particular_product(products_page, test_data):
         test_data["products"]["search_item_name"])
 
 
+
+
+@allure.epic("Products Page")
+@allure.severity(allure.severity_level.NORMAL)
+@allure.title("Verify that the user can add products in cart")
 
 @pytest.mark.regression 
 @pytest.mark.smoke
@@ -105,6 +122,10 @@ def test_add_products_in_cart(products_page):
 
 
 
+@allure.epic("Products Page")
+@allure.severity(allure.severity_level.NORMAL)
+@allure.title("Verify that the product quantity is displayed correctly in cart")
+
 @pytest.mark.regression 
 @pytest.mark.smoke
 def test_verify_product_quantity_in_cart(products_page, test_data: dict):
@@ -131,6 +152,10 @@ def test_verify_product_quantity_in_cart(products_page, test_data: dict):
 
     
 
+
+@allure.epic("Products Page")
+@allure.severity(allure.severity_level.NORMAL)
+@allure.title("Verify that the user can place order while checkout")
 
 @pytest.mark.regression 
 @pytest.mark.smoke
@@ -195,6 +220,10 @@ def test_place_order_register_while_checkout(products_page, signup_page, test_da
 
 
 
+@allure.epic("Products Page")
+@allure.severity(allure.severity_level.NORMAL)
+@allure.title("Verify that the user can remove products from the cart")
+
 @pytest.mark.regression 
 @pytest.mark.smoke
 def test_remove_products_from_cart(products_page):
@@ -223,6 +252,11 @@ def test_remove_products_from_cart(products_page):
 
 
 
+
+@allure.epic("Products Page")
+@allure.severity(allure.severity_level.NORMAL)
+@allure.title("Verify that the user can filter category section properly")
+
 @pytest.mark.regression 
 @pytest.mark.smoke
 def test_verify_category_section_filters_properly(products_page):
@@ -247,6 +281,11 @@ def test_verify_category_section_filters_properly(products_page):
 
 
 
+
+@allure.epic("Products Page")
+@allure.severity(allure.severity_level.NORMAL)
+@allure.title("Verify that the brand page shows products")
+
 @pytest.mark.regression 
 @pytest.mark.smoke
 def test_verify_brand_page_shows_products(products_page):
@@ -269,6 +308,9 @@ def test_verify_brand_page_shows_products(products_page):
     assert products_page.number_of_items_shown_babyhug() > 0
 
 
+@allure.epic("Products Page")
+@allure.severity(allure.severity_level.NORMAL)
+@allure.title("Verify that the user can add review on product")
 
 @pytest.mark.regression 
 @pytest.mark.smoke

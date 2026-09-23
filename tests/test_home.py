@@ -7,9 +7,9 @@ from utils.logger import get_logger
 logger = get_logger(__name__)
 
 
-
-@allure.title("Add product to the cart")
-@allure.description("Adding product to the cart from recommended products")
+@allure.epic("Home Page")
+@allure.severity(allure.severity_level.NORMAL)
+@allure.title("Add product to the cart successfully")
 def test_add_to_cart_from_recommended_products(home_page):
     home_page.open_base_url()
     logger.info("Verifying that the 'Home' link is visible")
@@ -25,6 +25,11 @@ def test_add_to_cart_from_recommended_products(home_page):
     expect(home_page.added_product_from_cart_page).to_be_visible()
 
 
+
+
+@allure.epic("Home Page")
+@allure.severity(allure.severity_level.NORMAL)
+@allure.title("Verify newsletter subscription on the Home page")
 def test_verify_subscribtion_in_home_page(home_page, test_data: dict):
     home_page.open_base_url()
     logger.info("Verifying that the 'Home' link is visible")
@@ -38,6 +43,9 @@ def test_verify_subscribtion_in_home_page(home_page, test_data: dict):
     expect(home_page.alert_success_message).to_be_visible()
 
 
+@allure.epic("Home Page")
+@allure.severity(allure.severity_level.MINOR)
+@allure.title("Verify scroll up arrow button works successfully")
 def test_verify_scroll_up_arrow_button_functionality(home_page):
     home_page.open_base_url()
     logger.info("Verifying that the 'Home' link is visible")
@@ -52,6 +60,10 @@ def test_verify_scroll_up_arrow_button_functionality(home_page):
     expect(home_page.full_fedged_practice_website_text).to_be_visible()
 
 
+
+@allure.epic("Home Page")
+@allure.severity(allure.severity_level.MINOR)
+@allure.title("Verify scroll-to-top functionality without using the arrow button")
 def test_verify_scroll_up_without_Arrow_button(home_page):
     home_page.open_base_url()
     logger.info("Verifying that the 'Home' link is visible")
