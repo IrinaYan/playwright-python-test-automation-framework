@@ -62,8 +62,6 @@ class ContactUs(BasePage):
     # ACTIONS
 
     def click_contact_us_link(self) -> None:
-        # self.logger.info("Clicking element: %s", self.contact_us_link)
-        # self.click(self.contact_us_link)
         self.click(self.contact_us_link, "'Contact Us' link")
 
 

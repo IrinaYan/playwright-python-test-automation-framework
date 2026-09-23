@@ -84,34 +84,27 @@ class HomePage(BasePage):
 
     
     def click_add_to_cart_recommended_product_button(self) -> None:
-        #self.logger.info("Clicking element: %s", self.add_to_cart_recommended_product_button)
         self.click(self.add_to_cart_recommended_product_button, "'Add to cart' button")
 
     def scroll_to_buttom_of_the_page(self) -> None:
-        #self.logger.info("Scrolling to the fotter_button: %s", self.footer_bottom)
         self.scroll(self.footer_bottom, "Footer area")
 
     def click_view_cart(self) -> None:
-        #self.logger.info("Clicking view cart link: %s", self.view_cart_link)
         self.click(self.view_cart_link, "'View cart' link")
 
     def input_email_in_subscribtion_field(self, test_data: dict) -> None:
-        #self.logger.info("Inputing email in subscribtion field: %s", self.subscribtion_email_field)
         self.fill(self.subscribtion_email_field, "'Email' field", test_data["email"])
 
     def click_subscribtion_arrow_button(self) -> None:
-        #self.logger.info("Clicking subscribtion arrow button: %s", self.subscribtion_arrow_button)
         self.click(self.subscribtion_arrow_button, "'Arrow' button")
 
     def click_scrollup_arrow_button(self) -> None:
-        #self.logger.info("Clicking scrollup arrow button: %s", self.scrollup_arrow_button)
         self.click(self.scrollup_arrow_button, "Scrollup 'Arrow' button")
 
 
     def click_close_popup(self) -> None:
         if self.page.locator("//div[@id = 'dismiss-button-element']/div").count() > 0:
             if self.close_popup.is_visible():
-                #self.logger.info("Clicking close popup icon: %s", self.close_popup)
                 self.click(self.close_popup, "'Close' icon popup")
         
 

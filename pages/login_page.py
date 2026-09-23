@@ -56,7 +56,6 @@ class LoginPage(BasePage):
     # Actions
 
     def click_signup_login_link(self) -> None:
-        #self.logger.info("Clicking signup login link: %s", self.login_link) 
         self.click(self.login_link, "'Login' link")
 
             
@@ -72,11 +71,9 @@ class LoginPage(BasePage):
         self.fill(self.login_password_field, "'Passord' field", PASSWORD) 
 
     def click_login_button(self) -> None:
-        #self.logger.info("Clicking on login button: %s", self.login_button)
         self.click(self.login_button, "'Login' button")    
 
     def click_logout_link(self) -> None:
-        #self.logger.info("Clicking on logout link: %s", self.logout_link)
         self.click(self.logout_link, "'Logout' link")
 
 

@@ -107,7 +107,9 @@ def pytest_runtest_makereport(item, call):
 
     setattr(item, f"rep_{report.when}", report)
 
-    if report.when == "call" and report.failed:
+    
+    if report.when in ("setup", "call") and report.failed:
+    #if report.when == "call" and report.failed:
         page = item.funcargs.get("page")
 
         if page:

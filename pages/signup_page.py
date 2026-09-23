@@ -157,7 +157,6 @@ class SignupPage(BasePage):
 
 
     def click_new_user_sign_up_link(self) -> None:
-        #self.logger.info("Clicking new user signup link: %s", self.new_user_sign_up_link)
         self.click(self.new_user_sign_up_link, "'Signup' link")
 
 
@@ -174,7 +173,6 @@ class SignupPage(BasePage):
         
 
     def click_new_user_sign_up_button(self) -> None:
-        #self.logger.info("Clicking new user Signup button: %s", self.signup_button)
         self.click(self.signup_button, "'Signup' button")
 
  
@@ -212,22 +210,18 @@ class SignupPage(BasePage):
 
  
     def click_create_account_button(self) -> None:
-        #self.logger.info("Clicking 'Create account' button: %s", self.create_account_button)
         self.click(self.create_account_button, "'Create account' field")
 
 
     def click_continue_button(self) -> None:
-        #self.logger.info("Clicking 'Continue' button: %s", self.continue_button)
         self.click(self.continue_button, "'Continue' button")
 
 
     def click_delete_account_link(self) -> None:
-        #self.logger.info("Clicking 'Delete account' button: %s", self.delete_account_link)
         self.click(self.delete_account_link, "'Delete account' link")
 
 
     def click_continue_button_on_deleted_account_page(self) -> None:
-        #self.logger.info("Clicking 'Continue' button on deleted account page: %s", self.continue_button_in_deleted_account_page)
         self.click(self.continue_button_in_deleted_account_page, "'Continue' button")
 
 
