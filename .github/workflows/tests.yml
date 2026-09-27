@@ -61,7 +61,7 @@ jobs:
       - name: Generate Allure report
         if: always()
         run: |
-          npm install -g allure
+          npm install -g allure-commandline@2.42.1
           allure --version 
           allure generate allure-results -o allure-report
 
