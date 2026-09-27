@@ -62,6 +62,7 @@ jobs:
         if: always()
         run: |
           npm install -g allure
+          allure --version 
           allure generate allure-results -o allure-report
 
       - name: Upload Allure report artifact
