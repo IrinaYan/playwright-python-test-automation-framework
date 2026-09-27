@@ -93,6 +93,8 @@ The main responsibilities are separated into:
 
 ## Project Structure
 
+```
+
 playwright-python-automation-framework/
 │
 |__.github/
@@ -123,7 +125,6 @@ playwright-python-automation-framework/
 │   └── test_data.json
 |   |__ test_file.txt
 |
-|__venv
 |
 |__reports
 │
@@ -146,7 +147,7 @@ playwright-python-automation-framework/
 ├── pytest.ini
 ├── requirements.txt
 └── README.md
-
+```
 
 
 ## Prerequisites
