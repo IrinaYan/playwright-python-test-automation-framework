@@ -61,44 +61,6 @@ def test_data():
     return data
 
 
-# You can think of the hook as writing the result onto the test, and the fixture as reading that result.
-
-# @pytest.hookimpl(hookwrapper=True)
-# def pytest_runtest_makereport(item, _call):
-#     outcome = yield   
-#     # yield pauses my function and gives control back to pytest. 
-#     #When pytest gives control back, it gives me an outcome object, which gets assigned to outcome
-#     report = outcome.get_result() # Now give me the actual pytest report from that outcome. So report is the pytest TestReport.
-
-#     setattr(item, f"rep_{report.when}", report)
-
-
-# @pytest.fixture(autouse=True)
-# def screenshot_on_failure(page, request):
-#     yield   # yield means - Pause the fixture here, let the test run, and then come back and continue the fixture.
-
-#     if request.node.rep_call.failed:
-#         os.makedirs("screenshots", exist_ok=True)
-
-#         screenshot_name = request.node.name.replace("[", "_").replace("]", "_")
-#         screenshot_path = f"screenshots/{screenshot_name}.png"
-
-#         page.screenshot(
-#             path=screenshot_path,
-#             full_page=True
-#         )
-
-#         # Attach screenshot to Allure report
-#         with open(screenshot_path, "rb") as screenshot:
-#             allure.attach(
-#                 screenshot.read(),
-#                 name="Failure Screenshot",
-#                 attachment_type=allure.attachment_type.PNG
-#             )
-
-
-
-
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):
