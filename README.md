@@ -10,7 +10,7 @@
 ## Overview
 
 This project is a UI test automation framework built to automate end-to-end
-test scenarios for the Automation Exercise practice website.[Automation Exercise](https://automationexercise.com/)
+test scenarios for the Automation Exercise practice website. [Automation Exercise](https://automationexercise.com/)
 
 This framework is built with Python, Playwright, and Pytest, following the Page Object Model (POM) design pattern. 
 
@@ -25,20 +25,20 @@ The project demonstrates:
 - Reusable Base Page
 - Custom Pytest fixtures
 - Pytest hooks
+- Test selection using Pytest markers
 - Test data management and dynamic test data generation
 - Environment configuration with `.env`
 - Failure screenshots
 - Logging and log management
-- Allure test reporting
+- Automatic Allure report deployment to GitHub Pages
 - Allure environment information
-- Cross-browser testing
-- Test retry mechanism using `pytest-rerunfailures` for flaky tests
+- Configurable test retry mechanism using `pytest-rerunfailures`
 - Test isolation using independent fixtures and test data
-- Test selection using Pytest markers
+- Cross-browser testing
 - Parallel test execution using `pytest-xdist`
 - Docker & Containerization
 - CI/CD automation using GitHub Actions
-- Automatic Allure report deployment to GitHub Pages / Public Allure report
+
 
 
 
@@ -61,8 +61,6 @@ The project demonstrates:
 | GitHub Pages | Test report hosting |
 | python-dotenv | Environment configuration |
 | JSON | Test data storage |
-
-
 
 
 
@@ -283,20 +281,27 @@ Open the report:
     - allure serve allure-results
     ```
 
-The Allure report provides:                        ??????????????????
+The Allure report provides:                        
 
 - Test execution status
 - Test duration
-- Failed test details
 - Test steps
-- Screenshots
-- Test history
+- Failed test details
+- Failure screenshots
+- Attached test logs
 - Environment information
+- Browser information displayed as test parameters
+- Test severity levels
+- Test categorization using Pytest markers (`smoke, regression`)
+- Test organization using Allure epics
+- Custom test titles
+- Automatic report deployment to GitHub Pages
 
 
 
 ## Docker
-The test automation framework can be executed inside a Docker container to provide a consistent, isolated and reproducible test execution environment.
+The test automation framework can be executed inside a Docker container to provide a consistent, 
+isolated and reproducible test execution environment.
 
 Make sure the following are installed: 
 - Docker Desktop
@@ -352,7 +357,7 @@ docker run --rm --env-file .env `
 
 
 
-This command:
+The command above does:
 
 - Loads environment variables from .env
 - Runs the tests inside the Docker container
@@ -398,10 +403,6 @@ After the test execution is complete, generate and open the Allure report locall
 
 
 
-
-
-
-
 ## CI/CD with GitHub Actions
 
 The project uses GitHub Actions to automatically build the Docker image and execute the Playwright test suite 
@@ -410,8 +411,11 @@ in a consistent CI environment.
 
 The workflow is triggered on:
 
-- Pushes to the repository
-- Pull requests
+- pushes to the repository
+- pull requests
+- workflow_dispatch
+
+
 
 ### CI Pipeline
 
@@ -428,7 +432,7 @@ The GitHub Actions workflow performs the following steps:
 9. Generates the Allure HTML report
 10. Publishes the Allure report to GitHub Pages
 
-Sensitive configuration values such as `BASE_URL` and `PASSWORD` are stored securely as GitHub Actions Secrets and are not committed to the repository.
+Sensitive configuration value such as `PASSWORD` is stored securely as GitHub Actions Secrets and are not committed to the repository.
 
 
 ### CI-generated Test Report
@@ -442,19 +446,11 @@ The latest CI-generated Allure report is available here:
 **Irina**
 
 - QA Automation Engineer / SDET
-- GitHub: ...
-- LinkedIn: ...
+- GitHub: [View the project on GitHub](https://github.com/IrinaYan/playwright-python-test-automation-framework)
 
 
 
-## Future Improvements
 
-Planned improvements include:
-
-- API test automation
-- Improved test data factories
-- Enhanced logging
-- API + UI test combination
 
 
 
