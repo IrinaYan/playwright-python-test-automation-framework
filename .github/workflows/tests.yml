@@ -65,7 +65,7 @@ jobs:
           allure --version 
           allure generate allure-results -o allure-report
 
-npm install -g allure
+
    
 
 
